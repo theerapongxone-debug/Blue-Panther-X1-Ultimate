@@ -1,1 +1,212 @@
+/*
+====================================================
+ Blue Panther X1 Ultimate v4.0
+ Core Theme
+====================================================
+*/
 
+:root{
+
+    --bg:#050816;
+    --bg2:#08142f;
+
+    --cyan:#00d4ff;
+    --cyan2:#53d8ff;
+
+    --white:#ffffff;
+    --text:#d7e9ff;
+
+    --glass:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.15);
+
+    --success:#00ff88;
+    --danger:#ff3d57;
+    --warning:#ffd34d;
+
+    --radius:24px;
+
+    --shadow:
+        0 0 15px rgba(0,212,255,.20),
+        0 0 40px rgba(0,212,255,.10);
+
+}
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    color:var(--white);
+
+    background:transparent;
+
+}
+
+/* Background */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,
+    #163a85 0%,
+    #08142f 45%,
+    #02040b 100%);
+
+    z-index:-20;
+
+}
+
+/* Glass */
+
+.glass{
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* Neon */
+
+.neon{
+
+    color:var(--cyan);
+
+    text-shadow:
+    0 0 10px var(--cyan),
+    0 0 25px var(--cyan);
+
+}
+
+/* Card */
+
+.card{
+
+    padding:22px;
+
+    border-radius:var(--radius);
+
+}
+
+/* Avatar */
+
+.avatar{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid var(--cyan);
+
+    box-shadow:
+
+    0 0 20px var(--cyan),
+
+    0 0 50px rgba(0,212,255,.35);
+
+}
+
+/* QR */
+
+.qr{
+
+    width:180px;
+
+    background:white;
+
+    padding:12px;
+
+    border-radius:18px;
+
+}
+
+/* Button */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border-radius:18px;
+
+    font-weight:bold;
+
+    background:var(--cyan);
+
+    color:#00131b;
+
+}
+
+/* LIVE */
+
+.live-dot{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--danger);
+
+    box-shadow:
+
+    0 0 18px red;
+
+    animation:blink 1s infinite;
+
+}
+
+/* Pulse */
+
+.pulse{
+
+    animation:pulse 2.5s infinite;
+
+}
+
+/* Float */
+
+.float{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+/*
