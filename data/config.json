@@ -1,11 +1,8 @@
 {
-"name":"Blue Panther X1",
-
-"youtube":"@YOUNG.FirstX1",
-
-"twitch":"theerapongx1_GMrr",
-
-"goal":1000,
-
-"theme":"blue"
+  "brand": "Blue Panther X1",
+  "streamer": "theerapongx1_GMrr",
+  "youtube": "@YOUNG.FirstX1",
+  "twitch": "theerapongx1_GMrr",
+  "goal": 1000,
+  "theme": "blue"
 }
