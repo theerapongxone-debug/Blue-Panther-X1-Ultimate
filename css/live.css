@@ -1,1 +1,115 @@
+.live-container{
 
+    width:100%;
+
+    height:100%;
+
+    position:relative;
+
+}
+
+/* ---------- TOP ---------- */
+
+.topbar{
+
+    position:absolute;
+
+    top:25px;
+
+    left:25px;
+
+    right:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.brand-text h1{
+
+    font-size:34px;
+
+}
+
+.brand-text p{
+
+    color:#b8d8ff;
+
+    margin-top:4px;
+
+}
+
+.live-badge{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 20px;
+
+}
+
+/* ---------- GAME ---------- */
+
+.game-safe{
+
+    position:absolute;
+
+    inset:120px 30px 180px 30px;
+
+}
+
+/* ---------- BOTTOM ---------- */
+
+.bottom-bar{
+
+    position:absolute;
+
+    left:30px;
+
+    right:30px;
+
+    bottom:30px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+}
+
+.social{
+
+    width:320px;
+
+}
+
+.social p{
+
+    color:#8ccfff;
+
+}
+
+#clock{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+}
