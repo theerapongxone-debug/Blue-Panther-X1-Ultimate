@@ -1,37 +1,112 @@
-loadConfig().then(config => {
+/* ==========================================
+   Blue Panther X1 Ultimate v3.0
+   Live Overlay Controller
+========================================== */
 
-    document.getElementById("brand").textContent =
-        config.brand;
+"use strict";
 
-    document.getElementById("streamer").textContent =
-        config.streamer;
+document.addEventListener("DOMContentLoaded", () => {
 
-    document.getElementById("youtube").textContent =
-        config.youtube;
-
-    document.getElementById("twitch").textContent =
-        config.twitch;
+    initClock();
+    initBrand();
+    initGoal();
 
 });
 
-function updateClock(){
+/* ---------- Clock ---------- */
 
-    const now = new Date();
+function initClock(){
 
-    const time =
-        now.toLocaleTimeString("th-TH",{
+    const clock=document.getElementById("clock");
 
-            hour:"2-digit",
+    if(!clock) return;
 
-            minute:"2-digit"
+    updateClock();
 
-        });
-
-    document.getElementById("clock").textContent =
-        time;
+    setInterval(updateClock,1000);
 
 }
 
-updateClock();
+function updateClock(){
 
-setInterval(updateClock,1000);
+    const clock=document.getElementById("clock");
+
+    if(!clock) return;
+
+    const d=new Date();
+
+    const h=String(d.getHours()).padStart(2,"0");
+    const m=String(d.getMinutes()).padStart(2,"0");
+    const s=String(d.getSeconds()).padStart(2,"0");
+
+    clock.textContent=`${h}:${m}:${s}`;
+
+}
+
+/* ---------- Brand ---------- */
+
+function initBrand(){
+
+    const title=document.getElementById("brandTitle");
+    const sub=document.getElementById("brandSubtitle");
+
+    if(title)
+        title.textContent=CONFIG.streamer.name;
+
+    if(sub)
+        sub.textContent=CONFIG.streamer.subtitle;
+
+}
+
+/* ---------- Goal ---------- */
+
+function initGoal(){
+
+    const fill=document.getElementById("goalFill");
+    const text=document.getElementById("goalText");
+
+    if(!fill || !text) return;
+
+    updateGoal();
+
+}
+
+function updateGoal(){
+
+    const fill=document.getElementById("goalFill");
+    const text=document.getElementById("goalText");
+
+    let current=CONFIG.goal.current;
+    let target=CONFIG.goal.target;
+
+    let percent=(current/target)*100;
+
+    if(percent>100) percent=100;
+
+    fill.style.width=percent+"%";
+
+    text.textContent=current+" / "+target+" บาท";
+
+}
+
+/* ---------- API ---------- */
+
+window.BluePanther={
+
+    setGoal(value){
+
+        CONFIG.goal.current=value;
+
+        updateGoal();
+
+    },
+
+    addDonation(amount){
+
+        CONFIG.goal.current+=amount;
+
+        updateGoal();
+
+    }
+
+};
