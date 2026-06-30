@@ -6,6 +6,8 @@ document.getElementById("alertTitle").textContent=title;
 
 document.getElementById("alertMessage").textContent=message;
 
+playNotify();
+
 alertBox.classList.add("show");
 
 setTimeout(()=>{
